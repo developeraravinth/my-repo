@@ -18,4 +18,4 @@ jobs:
       - name: Run a one-line script
         run: echo Hi Aravinth. Nice to meet you!
       - name: Get run metadata
-        run: echo ${{ github }}
+        run: echo ${{ toJson(github) }}
