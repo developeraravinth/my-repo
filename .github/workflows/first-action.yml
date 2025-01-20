@@ -3,7 +3,7 @@
 name: First setup
 
 # Controls when the workflow will run
-on: workflow_dispatch
+on: [workflow_dispatch, issues, push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,3 +17,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hi Aravinth. Nice to meet you!
+      - name: Get run metadata
+        run: echo ${{ github }}
