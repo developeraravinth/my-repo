@@ -1,10 +1,17 @@
-name: First setup
-on: [workflow_dispatch, issues, push]
+name: Poetry sample project
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
-        run: echo "Hi Aravinth. Nice to meet you!"
-      - name: Get run metadata
-        run: echo "${{ toJson(github) }}"
+      - name: Poetry build project
+        run: poetry install
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pytesting the project
+        run: pytest
