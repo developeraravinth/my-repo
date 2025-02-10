@@ -48,7 +48,7 @@ jobs:
   deploy:
     environment: dev
     env:
-      PROJ_NM: ${{ secrets.PROJECT_NAME }}
+      PROJ_NM: ${{ secrets.REPO_NAME }}
     needs: test
     runs-on: ubuntu-latest
     steps:
