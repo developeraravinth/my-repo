@@ -8,10 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Poetry build project
-        run: poetry install
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Pytesting the project
-        run: pytest
+      - name: Get codebase
+        uses: actions/checkout@v4
+      - name: Check python version
+        run: python --version
+      - name: Check pip version
+        run: pip --version
+        
