@@ -14,4 +14,6 @@ jobs:
         run: python --version
       - name: Check pip version
         run: pip --version
+      - name: Check poetry version
+        run: poetry --version
         
