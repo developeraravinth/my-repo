@@ -10,10 +10,8 @@ jobs:
     steps:
       - name: Get codebase
         uses: actions/checkout@v4
-      - name: Check python version
-        run: python --version
-      - name: Check pip version
-        run: pip --version
-      - name: Check poetry version
-        run: poetry --version
+      - name: Install poetry
+        run: pip install poetry
+      - name: Poetry build project
+        run: poetry install
         
