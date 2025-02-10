@@ -24,6 +24,7 @@ jobs:
       - name: Install the project dependencies
         run: poetry install
   test:
+    environment: dev
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -45,6 +46,9 @@ jobs:
       - name: Run pytests
         run: poetry run pytest -v
   deploy:
+    environment: dev
+    env:
+      PROJ_NM: ${{ secrets.PROJECT_NAME }}
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -64,6 +68,6 @@ jobs:
       - name: Install the project dependencies
         run: poetry install
       - name: Deploy code
-        run: echo "Deployed successfully"
+        run: echo "Deployed successfully from ${{ env.PROJ_NM }}"
 
         
